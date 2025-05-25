@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ParticleBackground from "./components/ParticleBackground";
+import CustomCursor from "./components/Cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,12 +25,58 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className=" cursor-none">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased cursor-none`}
       >
-        {children}
+        <main>{children}</main>
+        <ParticleBackground/>
+        <CustomCursor/>
       </body>
     </html>
   );
 }
+
+// import type { Metadata } from 'next';
+// import { Anton, Roboto_Flex } from 'next/font/google';
+
+
+// import './globals.css';
+// import ParticleBackground from './components/ParticleBackground';
+
+// const antonFont = Anton({
+//     weight: '400',
+//     style: 'normal',
+//     subsets: ['latin'],
+//     variable: '--font-anton',
+// });
+
+// const robotoFlex = Roboto_Flex({
+//     weight: ['100', '400', '500', '600', '700', '800'],
+//     style: 'normal',
+//     subsets: ['latin'],
+//     variable: '--font-roboto-flex',
+// });
+
+// export const metadata: Metadata = {
+//     title: 'Portfolio - Tajmirul Islam',
+//     description: 'Personal portfolio of Tajmirul Islam',
+// };
+
+// export default function RootLayout({
+//     children,
+// }: Readonly<{
+//     children: React.ReactNode;
+// }>) {
+//     return (
+//         <html lang="en">
+
+//             <body
+//                 className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}>
+//                     <main>{children}</main>
+//                     <ParticleBackground />
+
+//             </body>
+//         </html>
+//     );
+// }
