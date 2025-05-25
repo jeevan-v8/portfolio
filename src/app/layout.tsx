@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ParticleBackground from "./components/ParticleBackground";
 import CustomCursor from "./components/Cursor";
+import HeroSection from "./pagesections/HeroSection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,11 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en" className=" cursor-none">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased cursor-none`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <main>{children}</main>
         <ParticleBackground/>
-        <CustomCursor/>
+        <CustomCursor/> 
       </body>
     </html>
   );

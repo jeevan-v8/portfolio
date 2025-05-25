@@ -1,12 +1,11 @@
-import Image from "next/image";
-import ParticleBackground from "./components/ParticleBackground";
-// import Header from "./components/Header";
+
+import HeroSection from "./pagesections/HeroSection";
+
 
 export default function Home() {
   return (
-    <div className="cursor-none">
-      {/* <Header></Header> */}
-      {/* <ParticleBackground/> */}
-    </div>
+    <main className="relative z-10">
+      <HeroSection/>
+    </main>
   );
 }
